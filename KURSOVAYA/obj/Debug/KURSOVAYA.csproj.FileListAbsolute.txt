@@ -1,0 +1,2 @@
+c:\users\uladzimir_paliukhovi\documents\visual studio 2013\Projects\KURSOVAYA\KURSOVAYA\bin\Debug\KURSOVAYA.exe.config
+C:\Users\Uladzimir_Paliukhovi\Documents\Course_Work_2015\KURSOVAYA\bin\Debug\KURSOVAYA.exe.config
