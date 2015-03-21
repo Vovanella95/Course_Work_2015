@@ -11,11 +11,10 @@ namespace KURSOVAYA
     {
         static void Main(string[] args)
         {
-            var c = Newton.Roots(new double[,]
-                {{0, 2, 2, 2},
-                 {4, 0 ,0, 4},
-                 {6, 2, 0, 0}
-                });
+            var c = Newton.SolveNewthon(
+                a => 0.1*a.X[0]*a.X[0] + a.X[0] + 0.2*a.X[1]*a.X[1]-0.3,
+                a => 0.2*a.X[0]*a.X[0] + a.X[1]-0.1*a.X[0]*a.X[1]-0.7
+                    );
         }
     }
 }

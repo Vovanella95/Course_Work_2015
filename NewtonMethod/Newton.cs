@@ -8,6 +8,17 @@ namespace NewtonMethod
 {
     public static class Newton
     {
+        public class Vector
+        {
+            public double[] X;
+            public Vector (params double[] x)
+            {
+                X = new double[x.Length];
+                Array.Copy(x,X,x.Length);
+            }
+        }
+
+
         public static double[] Roots(double[,] matrix)
         {
 
@@ -71,6 +82,64 @@ namespace NewtonMethod
         }
 
 
+
+        public static double[] SolveNewthon(params Func<Vector,double>[] F)
+        {
+            int N = F.Length;
+            double[] Xk = new double[N];
+            double eps = 0.00001;
+
+            for (int i = 0; i < N; i++)
+            {
+                Xk[i] = 1;
+            }
+
+
+
+            while (true)
+            {
+                double[,] J = new double[N, N + 1];
+
+                for (int i = 0; i < N; i++)
+                {
+                    for (int j = 0; j < N; j++)
+                    {
+                        double[] X = new double[N];
+                        Array.Copy(Xk, X, N);
+                        X[j] += eps;
+                        J[i, j] = (F[i](new Vector(X)) - F[i](new Vector(Xk))) / eps;
+                    }
+
+                    J[i, N] = -F[i](new Vector(Xk));
+                }
+
+                double[] dX = Roots(J);
+
+                for (int i = 0; i < N; i++)
+                {
+                    Xk[i] += dX[i];
+                }
+
+
+                bool c = true;
+                for (int i = 0; i < N; i++)
+                {
+                    if (F[i](new Vector(Xk)) > eps)
+                    {
+                        c = false;
+                    }
+                }
+
+                if (c)
+                {
+                    return Xk;
+                }
+
+
+
+            }
+
+        }
 
 
     }
