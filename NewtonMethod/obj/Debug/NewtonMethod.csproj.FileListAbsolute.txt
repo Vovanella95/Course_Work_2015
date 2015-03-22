@@ -8,3 +8,8 @@ C:\Users\Владимир\Documents\Course_Work_2015\NewtonMethod\bin\Debug\Newt
 C:\Users\Владимир\Documents\Course_Work_2015\NewtonMethod\obj\Debug\NewtonMethod.csprojResolveAssemblyReference.cache
 C:\Users\Владимир\Documents\Course_Work_2015\NewtonMethod\obj\Debug\NewtonMethod.dll
 C:\Users\Владимир\Documents\Course_Work_2015\NewtonMethod\obj\Debug\NewtonMethod.pdb
+E:\Files\Учеба\3 курс\Курсовая работа\NewtonMethod\bin\Debug\NewtonMethod.dll
+E:\Files\Учеба\3 курс\Курсовая работа\NewtonMethod\bin\Debug\NewtonMethod.pdb
+E:\Files\Учеба\3 курс\Курсовая работа\NewtonMethod\obj\Debug\NewtonMethod.csprojResolveAssemblyReference.cache
+E:\Files\Учеба\3 курс\Курсовая работа\NewtonMethod\obj\Debug\NewtonMethod.dll
+E:\Files\Учеба\3 курс\Курсовая работа\NewtonMethod\obj\Debug\NewtonMethod.pdb

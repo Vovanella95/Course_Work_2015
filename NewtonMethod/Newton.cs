@@ -3,35 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Wowa Shaggy how-how-how i'm back
-//Все нормально нафиг, Шахно Лох
+
 namespace NewtonMethod
 {
     public static class Newton
     {
-        public class Vector
+        public class Vector // нифига не понял
         {
             public double[] X;
-            public Vector (params double[] x)
+            public Vector(params double[] x)
             {
                 X = new double[x.Length];
-                Array.Copy(x,X,x.Length);
+                Array.Copy(x, X, x.Length);
             }
         }
 
         private static double[] Roots(double[,] matrix)
         {
-            
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 if (matrix[i, i] != 0)
                 {
                     SetZeroDown(ref matrix, i);
-                }else
+                }
+                else
                 {
-                    for (int temp = 0; temp < matrix.GetLength(0); temp++)
+                    for (int temp = 0; temp < matrix.GetLength(0); temp++) // тут типа если диогональный = 0 то меняет местами строки?
                     {
-                        if(matrix[temp,i]!=0)
+                        if (matrix[temp, i] != 0)
                         {
                             SwapLines(ref matrix, temp, i);
                             SetZeroDown(ref matrix, i);
@@ -44,10 +44,10 @@ namespace NewtonMethod
 
             double[] Roots = new double[matrix.GetLength(0)];
 
-            for (int i = matrix.GetLength(0)-1; i >=0; i--)
+            for (int i = matrix.GetLength(0) - 1; i >= 0; i--) // а тут чо? почему ноль в скобках GetLength?
             {
                 double summ = 0;
-                for (int j = i+1; j < matrix.GetLength(0); j++)
+                for (int j = i + 1; j < matrix.GetLength(0); j++)
                 {
                     summ += matrix[i, j] * Roots[j];
                 }
@@ -57,15 +57,15 @@ namespace NewtonMethod
             return Roots;
         }
 
-        private static double Norm(double[] x)
+        private static double Norm(double[] x)// корень находит чтоли?
         {
             return Math.Sqrt(x.Sum());
         }
 
 
-        private static void SetZeroDown(ref double[,] matrix, int i)
+        private static void SetZeroDown(ref double[,] matrix, int i) //обнуляет типа столбец чтоли?
         {
-            for (int ii = i+1; ii < matrix.GetLength(0); ii++)
+            for (int ii = i + 1; ii < matrix.GetLength(0); ii++)
             {
                 double k = -matrix[ii, i] / matrix[i, i];
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -73,10 +73,9 @@ namespace NewtonMethod
                     matrix[ii, j] += k * matrix[i, j];
                 }
             }
-            
         }
 
-        private static void SwapLines(ref double[,] matrix, int i1, int i2)
+        private static void SwapLines(ref double[,] matrix, int i1, int i2)// о функцию написали что бы местами меняла
         {
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
@@ -86,18 +85,16 @@ namespace NewtonMethod
             }
         }
 
-        public static double[] SolveNewthon(params Func<Vector,double>[] F)
+        public static double[] SolveNewthon(params Func<Vector, double>[] F) //чччч
         {
             int N = F.Length;
             double[] Xk = new double[N];
             double eps = 0.000001;
 
-            for (int i = 0; i < N; i++)
+            for (int i = 0; i < N; i++)// единичная матрица? или что, вектор?
             {
                 Xk[i] = 1;
             }
-
-
 
             while (true)
             {
@@ -119,16 +116,10 @@ namespace NewtonMethod
                 double[] dX = Roots(J);
 
 
-
-                
-                
-
-
                 for (int i = 0; i < N; i++)
                 {
                     Xk[i] += dX[i];
                 }
-                
 
                 bool c = true;
                 for (int i = 0; i < N; i++)
@@ -143,15 +134,8 @@ namespace NewtonMethod
                 {
                     return Xk;
                 }
-
-
-
             }
-
         }
-
-
     }
-
-    
 }
+// ой я фиг знает , фз, работает чо?

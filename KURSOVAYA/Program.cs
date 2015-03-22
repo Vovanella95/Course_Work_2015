@@ -9,14 +9,12 @@ namespace KURSOVAYA
 {
     class Program
     {
-        // Достало все глючить
-        // W: и не говори
         static void Main(string[] args)
         {
             var c = Newton.SolveNewthon(
                 a => 0.1*a.X[0]*a.X[0] + a.X[0] + 0.2*a.X[1]*a.X[1]-0.3,
                 a => 0.2*a.X[0]*a.X[0] + a.X[1]-0.1*a.X[0]*a.X[1]-0.7
-                    );
+                                        );
         }
     }
 }

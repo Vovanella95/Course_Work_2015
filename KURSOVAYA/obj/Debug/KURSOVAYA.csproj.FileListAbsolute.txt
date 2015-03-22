@@ -21,3 +21,8 @@ E:\Files\Учеба\3 курс\Course_Work_2015\KURSOVAYA\obj\Debug\KURSOVAYA.pd
 E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\bin\Debug\KURSOVAYA.exe.config
 E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\obj\Debug\KURSOVAYA.exe
 E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\obj\Debug\KURSOVAYA.pdb
+E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\bin\Debug\KURSOVAYA.exe
+E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\bin\Debug\KURSOVAYA.pdb
+E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\bin\Debug\NewtonMethod.dll
+E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\bin\Debug\NewtonMethod.pdb
+E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\obj\Debug\KURSOVAYA.csprojResolveAssemblyReference.cache
