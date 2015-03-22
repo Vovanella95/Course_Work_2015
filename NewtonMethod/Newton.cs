@@ -158,7 +158,15 @@ namespace NewtonMethod
                 {
                     return Xk;
                 }
+
+
+
             }
+
         }
+
+
     }
+
+    
 }
