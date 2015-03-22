@@ -18,3 +18,6 @@ C:\Users\Владимир\Documents\Course_Work_2015\KURSOVAYA\obj\Debug\KURSOVA
 E:\Files\Учеба\3 курс\Course_Work_2015\KURSOVAYA\bin\Debug\KURSOVAYA.exe.config
 E:\Files\Учеба\3 курс\Course_Work_2015\KURSOVAYA\obj\Debug\KURSOVAYA.exe
 E:\Files\Учеба\3 курс\Course_Work_2015\KURSOVAYA\obj\Debug\KURSOVAYA.pdb
+E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\bin\Debug\KURSOVAYA.exe.config
+E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\obj\Debug\KURSOVAYA.exe
+E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\obj\Debug\KURSOVAYA.pdb

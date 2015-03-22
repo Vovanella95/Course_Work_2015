@@ -10,6 +10,7 @@ namespace KURSOVAYA
     class Program
     {
         // Достало все глючить
+        // W: и не говори
         static void Main(string[] args)
         {
             var c = Newton.SolveNewthon(

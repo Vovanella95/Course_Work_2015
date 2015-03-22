@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Wowa Shaggy how-how-how
+//Wowa Shaggy how-how-how i'm back
 //Все нормально нафиг, Шахно Лох
 namespace NewtonMethod
 {
