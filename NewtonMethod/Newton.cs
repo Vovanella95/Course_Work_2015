@@ -149,7 +149,7 @@ namespace NewtonMethod
             double[] Xk = new double[N];
             double[] TempX = new double[N];
             double[] Fxn = new double[N]; // Это вектор Fn(Xn)
-            double eps = 0.000001;
+            double eps = 0.0001;
             double beta = 0.01;
             double gamma = beta * beta;
             double[] Fxn1 = new double[N]; // Это вектор Fn(X(n+1))
@@ -186,7 +186,7 @@ namespace NewtonMethod
 
                 for (int i = 0; i < N; i++)
                 {
-                    TempX[i] = Xk[i] + dX[i];
+                    TempX[i] = Xk[i] + beta*dX[i];
                 }
 
                 ///////////////////////////////////////////////////////
@@ -203,13 +203,15 @@ namespace NewtonMethod
                 double NormFn = Norm(Fxn);    // Так узнаю ||F(xn)||
                 double NormFn1 = Norm(Fxn1);  // Так узнаю ||F(x(n+1)||
 
-                gamma = NormFn / NormFn1 * gamma; // Так находится Гамма
-
+               
+                double temp = beta;
                 beta = (NormFn*gamma)/(NormFn1*beta); // Так узнаю бета, но бета
                                                       // должно быть как min(..., 1)
                                                       // поэтому
- 
-                
+
+                gamma = gamma*NormFn1*beta/temp ; // Так находится Гамма
+
+
                 if (beta > 1)
                 {
                     beta = 1;
