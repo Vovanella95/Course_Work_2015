@@ -15,3 +15,6 @@ C:\Users\Владимир\Documents\Course_Work_2015\KURSOVAYA\bin\Debug\NewtonM
 C:\Users\Владимир\Documents\Course_Work_2015\KURSOVAYA\obj\Debug\KURSOVAYA.csprojResolveAssemblyReference.cache
 C:\Users\Владимир\Documents\Course_Work_2015\KURSOVAYA\obj\Debug\KURSOVAYA.exe
 C:\Users\Владимир\Documents\Course_Work_2015\KURSOVAYA\obj\Debug\KURSOVAYA.pdb
+E:\Files\Учеба\3 курс\Course_Work_2015\KURSOVAYA\bin\Debug\KURSOVAYA.exe.config
+E:\Files\Учеба\3 курс\Course_Work_2015\KURSOVAYA\obj\Debug\KURSOVAYA.exe
+E:\Files\Учеба\3 курс\Course_Work_2015\KURSOVAYA\obj\Debug\KURSOVAYA.pdb
