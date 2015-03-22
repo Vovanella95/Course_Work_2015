@@ -8,7 +8,7 @@ namespace NewtonMethod
 {
     public static class Newton
     {
-        public class Vector // нифига не понял
+        public class Vector // нифига не понял // и не надо
         {
             public double[] X;
             public Vector(params double[] x)
@@ -29,7 +29,7 @@ namespace NewtonMethod
                 }
                 else
                 {
-                    for (int temp = 0; temp < matrix.GetLength(0); temp++) // тут типа если диогональный = 0 то меняет местами строки?
+                    for (int temp = 0; temp < matrix.GetLength(0); temp++) // тут типа если диогональный = 0 то меняет местами строки? // типа да
                     {
                         if (matrix[temp, i] != 0)
                         {
@@ -57,13 +57,13 @@ namespace NewtonMethod
             return Roots;
         }
 
-        private static double Norm(double[] x)// корень находит чтоли?
+        private static double Norm(double[] x)// корень находит чтоли? // корень суммы квадратов координат
         {
-            return Math.Sqrt(x.Sum());
+            return Math.Sqrt(x.Sum(w=>w*w));
         }
 
 
-        private static void SetZeroDown(ref double[,] matrix, int i) //обнуляет типа столбец чтоли?
+        private static void SetZeroDown(ref double[,] matrix, int i) //обнуляет типа столбец чтоли? // Типа да
         {
             for (int ii = i + 1; ii < matrix.GetLength(0); ii++)
             {
@@ -91,7 +91,7 @@ namespace NewtonMethod
             double[] Xk = new double[N];
             double eps = 0.000001;
 
-            for (int i = 0; i < N; i++)// единичная матрица? или что, вектор?
+            for (int i = 0; i < N; i++)// единичная матрица? или что, вектор? // Вектор
             {
                 Xk[i] = 1;
             }
@@ -136,6 +136,99 @@ namespace NewtonMethod
                 }
             }
         }
+
+
+        public static double[] IncompleteForecast(params Func<Vector, double>[] F) //чччч
+        {
+            int N = F.Length;
+            double[] Xk = new double[N];
+            double eps = 0.000001;
+            double beta = 0.001;
+            double gamma = beta * beta;
+
+            for (int i = 0; i < N; i++)
+            {
+                Xk[i] = 1;
+            }
+
+            while (true)
+            {
+                double[,] J = new double[N, N + 1];
+
+                for (int i = 0; i < N; i++)
+                {
+                    for (int j = 0; j < N; j++)
+                    {
+                        double[] X = new double[N];
+                        Array.Copy(Xk, X, N);
+                        X[j] += eps;
+                        J[i, j] = (F[i](new Vector(X)) - F[i](new Vector(Xk))) / eps;
+                    }
+
+                    J[i, N] = -F[i](new Vector(Xk));
+                }
+
+                double[] dX = Roots(J);
+
+
+                double[] TempX = new double[N];
+
+                for (int i = 0; i < N; i++)
+                {
+                    TempX[i] = Xk[i] + dX[i];
+                }
+
+                ///////////////////////////////////////////////////////
+                //////// ТУТ ОСНОВНОЕ ОТЛИЧИЕ МОЕГО МЕТОДА НАФИГ //////
+
+                double[] Fxn = new double[N]; // Это вектор Fn(Xn)
+                for (int i = 0; i < N; i++)   // Тут я его задаю
+                {
+                    Fxn[i] = F[i](new Vector (Xk));
+                }
+
+                double[] Fxn1 = new double[N]; // Это вектор Fn(X(n+1))
+                for (int i = 0; i < N; i++)   // Тут я его задаю
+                {
+                    Fxn1[i] = F[i](new Vector(TempX));
+                }
+
+                double NormFn = Norm(Fxn);    // Так узнаю ||F(xn)||
+                double NormFn1 = Norm(Fxn1);  // Так узнаю ||F(x(n+1)||
+
+                gamma = NormFn / NormFn1 * gamma; // Так находится Гамма
+
+                beta = (NormFn*gamma)/(NormFn1*beta); // Так узнаю бета, но бета
+                                                      // должно быть как min(..., 1)
+                                                      // поэтому
+                if (beta > 1)
+                {
+                    beta = 1;
+                }
+
+
+
+                ///////////////// КОНЕЦ ОСНОВНОГО ОТЛИЧИЯ НАФИГ ////////////////////
+                ////////////////////////////////////////////////////////////////////
+
+
+
+                Array.Copy(TempX, Xk, N);
+
+                bool c = true;
+                for (int i = 0; i < N; i++)
+                {
+                    if (F[i](new Vector(Xk)) > eps)
+                    {
+                        c = false;
+                    }
+                }
+
+                if (c)
+                {
+                    return Xk;
+                }
+            }
+        }
     }
 }
-// ой я фиг знает , фз, работает чо?
