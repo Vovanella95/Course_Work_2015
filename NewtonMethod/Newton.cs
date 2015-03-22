@@ -235,5 +235,101 @@ namespace NewtonMethod
                 }
             }
         }
+
+        public static double[] СompleteForecast(params Func<Vector, double>[] F) //W
+        {
+            int N = F.Length;
+            double[] Xk = new double[N];
+            double[] TempX = new double[N];
+            double[] Fxn = new double[N]; // Это вектор Fn(Xn)
+            double eps = 0.0001;
+            double beta = 0.01;
+            double[] Fxn1 = new double[N]; // Это вектор Fn(X(n+1))
+
+
+            for (int i = 0; i < N; i++)
+            {
+                Xk[i] = 1;
+            }
+
+            int Iterations = 0;
+            while (true)
+            {
+                Iterations++;
+                double[,] J = new double[N, N + 1];
+
+                for (int i = 0; i < N; i++)
+                {
+                    for (int j = 0; j < N; j++)
+                    {
+                        double[] X = new double[N];
+                        Array.Copy(Xk, X, N);
+                        X[j] += eps;
+                        J[i, j] = (F[i](new Vector(X)) - F[i](new Vector(Xk))) / eps;
+                    }
+
+                    J[i, N] = -F[i](new Vector(Xk));
+                }
+
+                double[] dX = Roots(J);
+
+
+
+
+                for (int i = 0; i < N; i++)
+                {
+                    TempX[i] = Xk[i] + beta * dX[i];
+                }
+
+                ///////////////////////////////////////////////////////
+                //////// ТУТ ОСНОВНОЕ ОТЛИЧИЕ МОЕГО МЕТОДА НАФИГ //////
+
+
+                for (int i = 0; i < N; i++)   // Тут я его задаю
+                {
+                    Fxn[i] = F[i](new Vector(Xk));
+                    Fxn1[i] = F[i](new Vector(TempX));
+                }
+
+
+                double NormFn = Norm(Fxn);    // Так узнаю ||F(xn)||
+                double NormFn1 = Norm(Fxn1);  // Так узнаю ||F(x(n+1)||
+                double NormdX = Norm(dX);
+                double NFDX = NormFn + NormdX;
+                double NFDX1 = NormFn1 + NormdX;
+
+                double gamma = beta * beta * NFDX  / NormFn1;
+               
+                double temp = beta;
+                beta = (NormFn * gamma) / (NFDX* beta); // Так узнаю бета, но бета
+                // должно быть как min(..., 1)
+                // поэтому
+
+                gamma = gamma * NormFn * NFDX1 / NormdX * NormFn2; // Так находится Гамма
+
+
+                if (beta > 1)
+                {
+                    beta = 1;
+                }
+                ///////////////// КОНЕЦ ОСНОВНОГО ОТЛИЧИЯ НАФИГ ////////////////////
+                ////////////////////////////////////////////////////////////////////
+
+                Array.Copy(TempX, Xk, N);
+                bool c = true;
+                for (int i = 0; i < N; i++)
+                {
+                    if (F[i](new Vector(Xk)) > eps)
+                    {
+                        c = false;
+                    }
+                }
+                if (c)
+                {
+
+                    return Xk;
+                }
+            }
+        }
     }
 }
