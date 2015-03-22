@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Wowa Shaggy how-how-how
 namespace NewtonMethod
 {
     public static class Newton
@@ -134,15 +134,7 @@ namespace NewtonMethod
                 {
                     return Xk;
                 }
-
-
-
             }
-
         }
-
-
     }
-
-    
 }
