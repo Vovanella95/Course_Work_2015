@@ -91,8 +91,6 @@ namespace NewtonMethod
             int N = F.Length;
             double[] Xk = new double[N];
             double eps = 0.000001;
-            double beta = 0.001;
-            double gamma = beta * beta;
 
             for (int i = 0; i < N; i++)
             {
@@ -122,29 +120,15 @@ namespace NewtonMethod
 
 
 
-                double[] Temp = new double[N];
-                for (int i = 0; i < N; i++)
-                {
-                    Temp[i] = F[i](new Vector(Xk));
-                }
-                double Norm1 = Norm(Temp);
+                
                 
 
 
                 for (int i = 0; i < N; i++)
                 {
-                    Xk[i] += beta*dX[i];
+                    Xk[i] += dX[i];
                 }
-
-                for (int i = 0; i < N; i++)
-                {
-                    Temp[i] = F[i](new Vector(Xk));
-                }
-                double Norm2 = Norm(Temp);
-
-
-
-
+                
 
                 bool c = true;
                 for (int i = 0; i < N; i++)
