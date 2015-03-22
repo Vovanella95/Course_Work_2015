@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 //Wowa Shaggy how-how-how
+//Все нормально нафиг, Шахно Лох
 namespace NewtonMethod
 {
     public static class Newton
@@ -20,7 +21,7 @@ namespace NewtonMethod
 
         private static double[] Roots(double[,] matrix)
         {
-
+            
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 if (matrix[i, i] != 0)
