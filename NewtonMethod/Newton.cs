@@ -18,8 +18,7 @@ namespace NewtonMethod
             }
         }
 
-
-        public static double[] Roots(double[,] matrix)
+        private static double[] Roots(double[,] matrix)
         {
 
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -57,6 +56,11 @@ namespace NewtonMethod
             return Roots;
         }
 
+        private static double Norm(double[] x)
+        {
+            return Math.Sqrt(x.Sum());
+        }
+
 
         private static void SetZeroDown(ref double[,] matrix, int i)
         {
@@ -81,13 +85,13 @@ namespace NewtonMethod
             }
         }
 
-
-
         public static double[] SolveNewthon(params Func<Vector,double>[] F)
         {
             int N = F.Length;
             double[] Xk = new double[N];
-            double eps = 0.00001;
+            double eps = 0.000001;
+            double beta = 0.001;
+            double gamma = beta * beta;
 
             for (int i = 0; i < N; i++)
             {
@@ -115,10 +119,30 @@ namespace NewtonMethod
 
                 double[] dX = Roots(J);
 
+
+
+                double[] Temp = new double[N];
                 for (int i = 0; i < N; i++)
                 {
-                    Xk[i] += dX[i];
+                    Temp[i] = F[i](new Vector(Xk));
                 }
+                double Norm1 = Norm(Temp);
+                
+
+
+                for (int i = 0; i < N; i++)
+                {
+                    Xk[i] += beta*dX[i];
+                }
+
+                for (int i = 0; i < N; i++)
+                {
+                    Temp[i] = F[i](new Vector(Xk));
+                }
+                double Norm2 = Norm(Temp);
+
+
+
 
 
                 bool c = true;
