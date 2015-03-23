@@ -20,7 +20,6 @@ namespace NewtonMethod
 
         private static double[] Roots(double[,] matrix)
         {
-
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 if (matrix[i, i] != 0)
@@ -29,7 +28,7 @@ namespace NewtonMethod
                 }
                 else
                 {
-                    for (int temp = 0; temp < matrix.GetLength(0); temp++) // тут типа если диогональный = 0 то меняет местами строки? // типа да
+                    for (int temp = 0; temp < matrix.GetLength(0); temp++)
                     {
                         if (matrix[temp, i] != 0)
                         {
@@ -44,7 +43,7 @@ namespace NewtonMethod
 
             double[] Roots = new double[matrix.GetLength(0)];
 
-            for (int i = matrix.GetLength(0) - 1; i >= 0; i--) // а тут чо? почему ноль в скобках GetLength?
+            for (int i = matrix.GetLength(0) - 1; i >= 0; i--)
             {
                 double summ = 0;
                 for (int j = i + 1; j < matrix.GetLength(0); j++)
@@ -57,7 +56,7 @@ namespace NewtonMethod
             return Roots;
         }
 
-        private static double Norm(double[] x)// корень находит чтоли? // корень суммы квадратов координат
+        private static double Norm(double[] x)
         {
             double summ = 0;
             for (int i = 0; i < x.Length; i++)
@@ -67,7 +66,7 @@ namespace NewtonMethod
             return Math.Sqrt(summ);
         }
 
-        private static void SetZeroDown(ref double[,] matrix, int i) //обнуляет типа столбец чтоли? // Типа да
+        private static void SetZeroDown(ref double[,] matrix, int i)
         {
             for (int ii = i + 1; ii < matrix.GetLength(0); ii++)
             {
@@ -79,7 +78,7 @@ namespace NewtonMethod
             }
         }
 
-        private static void SwapLines(ref double[,] matrix, int i1, int i2)// о функцию написали что бы местами меняла
+        private static void SwapLines(ref double[,] matrix, int i1, int i2)
         {
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
@@ -89,14 +88,14 @@ namespace NewtonMethod
             }
         }
 
-        public static double[] SolveNewthon(params Func<Vector, double>[] F) //чччч
+        public static double[] SolveNewthon(params Func<Vector, double>[] F) 
         {
             int N = F.Length;
             double[] Xk = new double[N];
             double eps = 0.000001;
             int Iterations = 0;
 
-            for (int i = 0; i < N; i++)// единичная матрица? или что, вектор? // Вектор
+            for (int i = 0; i < N; i++)
             {
                 Xk[i] = 1;
             }
@@ -148,12 +147,11 @@ namespace NewtonMethod
             int N = F.Length;
             double[] Xk = new double[N];
             double[] TempX = new double[N];
-            double[] Fxn = new double[N]; // Это вектор Fn(Xn)
-            double eps = 0.0001;
-            double beta = 0.01;
+            double[] Fxn = new double[N];
+            double eps = 0.000001;
+            double beta = 0.1;
             double gamma = beta * beta;
-            double[] Fxn1 = new double[N]; // Это вектор Fn(X(n+1))
-
+            double[] Fxn1 = new double[N]; 
 
             for (int i = 0; i < N; i++)
             {
@@ -175,50 +173,38 @@ namespace NewtonMethod
                         X[j] += eps;
                         J[i, j] = (F[i](new Vector(X)) - F[i](new Vector(Xk))) / eps;
                     }
-
                     J[i, N] = -F[i](new Vector(Xk));
                 }
-
                 double[] dX = Roots(J);
-
-
                 
-
                 for (int i = 0; i < N; i++)
                 {
                     TempX[i] = Xk[i] + beta*dX[i];
                 }
 
-                ///////////////////////////////////////////////////////
-                //////// ТУТ ОСНОВНОЕ ОТЛИЧИЕ МОЕГО МЕТОДА НАФИГ //////
+               
 
-              
-                for (int i = 0; i < N; i++)   // Тут я его задаю
+
+                for (int i = 0; i < N; i++)   
                 {
                     Fxn[i] = F[i](new Vector (Xk));
                     Fxn1[i] = F[i](new Vector(TempX));
-                }
-
-              
-                double NormFn = Norm(Fxn);    // Так узнаю ||F(xn)||
-                double NormFn1 = Norm(Fxn1);  // Так узнаю ||F(x(n+1)||
-
-               
-                double temp = beta;
-                beta = (NormFn*gamma)/(NormFn1*beta); // Так узнаю бета, но бета
-                                                      // должно быть как min(..., 1)
-                                                      // поэтому
-
-                gamma = gamma*NormFn1*beta/temp ; // Так находится Гамма
-
-
-                if (beta > 1)
+                }             
+                double NormFn = Norm(Fxn);    
+                double NormFn1 = Norm(Fxn1);
+                if (NormFn1 < NormFn)
                 {
                     beta = 1;
                 }
-                ///////////////// КОНЕЦ ОСНОВНОГО ОТЛИЧИЯ НАФИГ ////////////////////
-                ////////////////////////////////////////////////////////////////////
-
+                else
+                {
+                    beta = (NormFn * gamma) / (NormFn1 * beta);
+                    gamma =(NormFn * gamma) / NormFn1;
+                    if (beta > 1)
+                    {
+                        beta = 1;
+                    }
+                }
                 Array.Copy(TempX, Xk, N);
                 bool c = true;
                 for (int i = 0; i < N; i++)
@@ -230,7 +216,6 @@ namespace NewtonMethod
                 }
                 if (c)
                 {
-
                     return Xk;
                 }
             }
@@ -304,7 +289,7 @@ namespace NewtonMethod
                 beta = (NormFn * gamma) / (NFDX* beta); // Так узнаю бета, но бета
                 // должно быть как min(..., 1)
                 // поэтому
-
+                double NormFn2 = 0;
                 gamma = gamma * NormFn * NFDX1 / NormdX * NormFn2; // Так находится Гамма
 
 
