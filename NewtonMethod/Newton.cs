@@ -142,7 +142,7 @@ namespace NewtonMethod
             }
         }
 
-        public static double[] IncompleteForecast(params Func<Vector, double>[] F) //чччч
+        public static double[] IncompleteForecast(params Func<Vector, double>[] F)
         {
             int N = F.Length;
             double[] Xk = new double[N];

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KURSOVAYA", "KURSOVAYA\KURS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewtonMethod", "NewtonMethod\NewtonMethod.csproj", "{4E03D6CA-67E3-452C-967D-C7D2FABA1121}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormPresentation", "FormPresentation\FormPresentation.csproj", "{C70C3475-BD45-4725-9F91-F4D820925E1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4E03D6CA-67E3-452C-967D-C7D2FABA1121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E03D6CA-67E3-452C-967D-C7D2FABA1121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E03D6CA-67E3-452C-967D-C7D2FABA1121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C70C3475-BD45-4725-9F91-F4D820925E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C70C3475-BD45-4725-9F91-F4D820925E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C70C3475-BD45-4725-9F91-F4D820925E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C70C3475-BD45-4725-9F91-F4D820925E1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

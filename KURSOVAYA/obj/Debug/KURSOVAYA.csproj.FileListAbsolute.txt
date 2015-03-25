@@ -26,3 +26,4 @@ E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\bin\Debug
 E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\bin\Debug\NewtonMethod.dll
 E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\bin\Debug\NewtonMethod.pdb
 E:\Files\Учеба\3 курс\Курсовая работа\KURSOVAYA\obj\Debug\KURSOVAYA.csprojResolveAssemblyReference.cache
+C:\Users\Uladzimir_Paliukhovi\Documents\Course_Work_2015\KURSOVAYA\bin\Debug\Simpro.Expr.dll
