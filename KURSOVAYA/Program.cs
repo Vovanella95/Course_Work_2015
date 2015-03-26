@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NewtonMethod;
 using System.Diagnostics;
-using Simpro.Expr;
+
 using System.Linq.Expressions;
 
 namespace KURSOVAYA
@@ -16,9 +16,7 @@ namespace KURSOVAYA
         {
 
 
-            ExprParser ep = new ExprParser();
-            LambdaExpression m = ep.Parse("(int x, int y) => (x+x)+12*y-3");
-            var dd = ep.Run(m, 2, 6);
+          
             
 
 

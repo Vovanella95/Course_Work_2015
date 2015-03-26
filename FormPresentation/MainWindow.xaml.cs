@@ -30,17 +30,11 @@ namespace FormPresentation
 
         private void Run_Click(object sender, RoutedEventArgs e)
         {
+            string a = "fdfsfsfsf  dsfdf s,sd fsdf.dsf sdfafgdf   dfggf ";
+            var d = a.Select(c => c + "  " + c);
 
 
-            ExprParser ep = new ExprParser();
-            LambdaExpression m = ep.Parse("(int x, int y) => (x+x)+12*y-3");
-           
-
-
-            InputBox.Text = Newton.SolveNewthon(
-                a => a.X[0] * a.X[1] - 2, 
-                a => a.X[1]-a.X[0]-1
-                )[0].ToString();
+            
         }
     }
 }

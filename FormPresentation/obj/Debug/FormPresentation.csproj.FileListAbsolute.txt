@@ -13,4 +13,3 @@ C:\Users\Uladzimir_Paliukhovi\Documents\Course_Work_2015\FormPresentation\obj\De
 C:\Users\Uladzimir_Paliukhovi\Documents\Course_Work_2015\FormPresentation\obj\Debug\FormPresentation.csproj.GenerateResource.Cache
 C:\Users\Uladzimir_Paliukhovi\Documents\Course_Work_2015\FormPresentation\obj\Debug\FormPresentation.exe
 C:\Users\Uladzimir_Paliukhovi\Documents\Course_Work_2015\FormPresentation\obj\Debug\FormPresentation.pdb
-C:\Users\Uladzimir_Paliukhovi\Documents\Course_Work_2015\FormPresentation\bin\Debug\Simpro.Expr.dll
