@@ -8,7 +8,7 @@ namespace NewtonMethod
 {
     public static class Newton
     {
-        public class Vector // нифига не понял // и не надо
+        public class Vector
         {
             public double[] X;
             public Vector(params double[] x)
@@ -179,7 +179,7 @@ namespace NewtonMethod
                 
                 for (int i = 0; i < N; i++)
                 {
-                    TempX[i] = Xk[i] + beta*dX[i];
+                    TempX[i] = Xk[i] + beta*dX[i];// тут цикл для нахождения всяких икс? а бетта постоянная? почему так, странно
                 }
 
                
@@ -192,6 +192,7 @@ namespace NewtonMethod
                 }             
                 double NormFn = Norm(Fxn);    
                 double NormFn1 = Norm(Fxn1);
+
                 if (NormFn1 < NormFn)
                 {
                     beta = 1;
@@ -226,11 +227,14 @@ namespace NewtonMethod
             int N = F.Length;
             double[] Xk = new double[N];
             double[] TempX = new double[N];
-            double[] Fxn = new double[N]; // Это вектор Fn(Xn)
+            double[] TempXn = new double[N];
+            double[] Fxn = new double[N];
             double eps = 0.0001;
-            double beta = 0.01;
-            double[] Fxn1 = new double[N]; // Это вектор Fn(X(n+1))
-
+            double beta = 0.1;
+            double[] Fxn1 = new double[N];
+            double[] Fxn2 = new double[N];
+            double[] Fxndx = new double[N];
+            double[] Fxndx1 = new double[N];
 
             for (int i = 0; i < N; i++)
             {
@@ -258,48 +262,47 @@ namespace NewtonMethod
 
                 double[] dX = Roots(J);
 
-
-
-
                 for (int i = 0; i < N; i++)
                 {
                     TempX[i] = Xk[i] + beta * dX[i];
                 }
 
-                ///////////////////////////////////////////////////////
-                //////// ТУТ ОСНОВНОЕ ОТЛИЧИЕ МОЕГО МЕТОДА НАФИГ //////
+                 for (int i = 1; i < N; i++)
+                {
+                    TempXn[i] = Xk[i] + beta * dX[i];
+                }
 
-
-                for (int i = 0; i < N; i++)   // Тут я его задаю
+                for (int i = 0; i < N; i++)
                 {
                     Fxn[i] = F[i](new Vector(Xk));
                     Fxn1[i] = F[i](new Vector(TempX));
+                    Fxn2[i] = F[i](new Vector(TempXn));
+                    Fxndx[i] = F[i](new Vector(Xk))+dX[i];
+                    Fxndx1[i] = F[i](new Vector(TempX))+dX[i+1];
                 }
 
 
-                double NormFn = Norm(Fxn);    // Так узнаю ||F(xn)||
-                double NormFn1 = Norm(Fxn1);  // Так узнаю ||F(x(n+1)||
-                double NormdX = Norm(dX);
-                double NFDX = NormFn + NormdX;
-                double NFDX1 = NormFn1 + NormdX;
-
-                double gamma = beta * beta * NFDX  / NormFn1;
-               
-                double temp = beta;
-                beta = (NormFn * gamma) / (NFDX* beta); // Так узнаю бета, но бета
-                // должно быть как min(..., 1)
-                // поэтому
-                double NormFn2 = 0;
-                gamma = gamma * NormFn * NFDX1 / NormdX * NormFn2; // Так находится Гамма
+                double NormFn = Norm(Fxn);
+                double NormFn1 = Norm(Fxn1);
+                double NormFn2 = Norm(Fxn2);
+                double NormFdx = Norm(Fxndx);
+                double NormFdx1 = Norm(Fxndx1);
+                double gamma = beta*beta*NormFdx/NormFn1;
 
 
-                if (beta > 1)
+                if (NormFn1 < NormFn)
                 {
                     beta = 1;
                 }
-                ///////////////// КОНЕЦ ОСНОВНОГО ОТЛИЧИЯ НАФИГ ////////////////////
-                ////////////////////////////////////////////////////////////////////
-
+                else
+                {
+                    beta = (NormFn*gamma)/(NormFdx*beta);
+                    gamma = (gamma*NormFn*NormFdx1)/(NormFdx * NormFn2);
+                    if (beta > 1)
+                    {
+                        beta = 1;
+                    }
+                }
                 Array.Copy(TempX, Xk, N);
                 bool c = true;
                 for (int i = 0; i < N; i++)
@@ -311,9 +314,9 @@ namespace NewtonMethod
                 }
                 if (c)
                 {
-
                     return Xk;
                 }
+                
             }
         }
     }
