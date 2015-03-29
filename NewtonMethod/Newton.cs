@@ -267,9 +267,26 @@ namespace NewtonMethod
                     TempX[i] = Xk[i] + beta * dX[i];
                 }
 
-                 for (int i = 1; i < N; i++)
+                double[,] JJ = new double[N, N + 1];
+
+                for (int i = 0; i < N; i++)
                 {
-                    TempXn[i] = Xk[i] + beta * dX[i];
+                    for (int j = 0; j < N; j++)
+                    {
+                        double[] X = new double[N];
+                        Array.Copy(TempX, X, N);
+                        X[j] += eps;
+                        JJ[i, j] = (F[i](new Vector(X)) - F[i](new Vector(TempX))) / eps;
+                    }
+
+                    JJ[i, N] = -F[i](new Vector(TempX));
+                }
+
+                double[] dXn = Roots(JJ);
+
+                 for (int i = 0; i < N; i++)
+                {
+                    TempXn[i] = TempX[i] + beta * dXn[i];
                 }
 
                 for (int i = 0; i < N; i++)
@@ -278,7 +295,7 @@ namespace NewtonMethod
                     Fxn1[i] = F[i](new Vector(TempX));
                     Fxn2[i] = F[i](new Vector(TempXn));
                     Fxndx[i] = F[i](new Vector(Xk))+dX[i];
-                    Fxndx1[i] = F[i](new Vector(TempX))+dX[i+1];
+                    Fxndx1[i] = F[i](new Vector(TempX))+dXn[i];
                 }
 
 

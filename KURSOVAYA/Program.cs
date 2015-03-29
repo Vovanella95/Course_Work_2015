@@ -32,6 +32,14 @@ namespace KURSOVAYA
                                              );
             sw.Stop();
             var Time2 = sw.ElapsedTicks;
+
+            sw.Start();
+            var e = Newton.СompleteForecast(
+                                                 a => 0.1 * a.X[0] * a.X[0] + a.X[0] + 0.2 * a.X[1] * a.X[1] - 0.3,
+                                                 a => 0.2 * a.X[0] * a.X[0] + a.X[1] - 0.1 * a.X[0] * a.X[1] - 0.7
+                                             );
+            sw.Stop();
+            var Time3 = sw.ElapsedTicks;
         }
     }
 }
