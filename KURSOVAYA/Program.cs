@@ -6,40 +6,37 @@ using System.Threading.Tasks;
 using NewtonMethod;
 using System.Diagnostics;
 
-using System.Linq.Expressions;
-
 namespace KURSOVAYA
 {
     class Program
     {
-        static void Main(string[] args)
+
+
+        static void Print(double[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write("X["+(i+1)+"] = "+array[i] + " ");
+            } 
+            Console.WriteLine();
+        }
+
+        static void Main()
         {
 
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            var c = Newton.SolveNewthon(
-                                                 a => 0.1 * a.X[0] * a.X[0] + a.X[0] + 0.2 * a.X[1] * a.X[1] - 0.3,
-                                                 a => 0.2 * a.X[0] * a.X[0] + a.X[1] - 0.1 * a.X[0] * a.X[1] - 0.7
-                                       );
-            sw.Stop();
-            var Time1 = sw.ElapsedTicks;
+            Func<Vector, double> eq1 = a => 0.1 * a.X[0] * a.X[0] + a.X[0] + 0.2 * a.X[1] * a.X[1] - 0.3;
+            Func<Vector, double> eq2 = a => 0.2 * a.X[0] * a.X[0] + a.X[1] - 0.1 * a.X[0] * a.X[1] - 0.7;
 
+            var c = Newton.SolveNewthon(eq1,eq2);
+            Print(c);
 
-            sw.Start();
-            var d = Newton.IncompleteForecast(
-                                                 a => 0.1 * a.X[0] * a.X[0] + a.X[0] + 0.2 * a.X[1] * a.X[1] - 0.3,
-                                                 a => 0.2 * a.X[0] * a.X[0] + a.X[1] - 0.1 * a.X[0] * a.X[1] - 0.7
-                                             );
-            sw.Stop();
-            var Time2 = sw.ElapsedTicks;
+            var d = Newton.IncompleteForecast(eq1,eq2);
+            Print(d);
+            var e = Newton.СompleteForecast(eq1,eq2);
+            Print(e);
 
-            sw.Start();
-            var e = Newton.СompleteForecast(
-                                                 a => 0.1 * a.X[0] * a.X[0] + a.X[0] + 0.2 * a.X[1] * a.X[1] - 0.3,
-                                                 a => 0.2 * a.X[0] * a.X[0] + a.X[1] - 0.1 * a.X[0] * a.X[1] - 0.7
-                                             );
-            sw.Stop();
-            var Time3 = sw.ElapsedTicks;
+            Console.ReadLine();
+
         }
     }
 }

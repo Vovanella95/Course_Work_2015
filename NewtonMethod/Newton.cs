@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace NewtonMethod
 {
+
+    public class Vector
+    {
+        public double[] X;
+        public Vector(params double[] x)
+        {
+            X = new double[x.Length];
+            Array.Copy(x, X, x.Length);
+        }
+    }
+
     public static class Newton
     {
-        public class Vector
-        {
-            public double[] X;
-            public Vector(params double[] x)
-            {
-                X = new double[x.Length];
-                Array.Copy(x, X, x.Length);
-            }
-        }
-
         private static double[] Roots(double[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -180,6 +181,7 @@ namespace NewtonMethod
                 for (int i = 0; i < N; i++)
                 {
                     TempX[i] = Xk[i] + beta*dX[i];// тут цикл для нахождения всяких икс? а бетта постоянная? почему так, странно
+                                                  // тут бета нулевое задано уже, а дальше находится бета первое, оно меняется
                 }
 
                
@@ -297,7 +299,6 @@ namespace NewtonMethod
                     Fxndx[i] = F[i](new Vector(Xk))+dX[i];
                     Fxndx1[i] = F[i](new Vector(TempX))+dXn[i];
                 }
-
 
                 double NormFn = Norm(Fxn);
                 double NormFn1 = Norm(Fxn1);
