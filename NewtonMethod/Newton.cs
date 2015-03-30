@@ -184,9 +184,6 @@ namespace NewtonMethod
                                                   // тут бета нулевое задано уже, а дальше находится бета первое, оно меняется
                 }
 
-               
-
-
                 for (int i = 0; i < N; i++)   
                 {
                     Fxn[i] = F[i](new Vector (Xk));
@@ -224,7 +221,7 @@ namespace NewtonMethod
             }
         }
 
-        public static double[] СompleteForecast(params Func<Vector, double>[] F) //W
+        public static double[] СompleteForecast(params Func<Vector, double>[] F)
         {
             int N = F.Length;
             double[] Xk = new double[N];
@@ -306,7 +303,6 @@ namespace NewtonMethod
                 double NormFdx = Norm(Fxndx);
                 double NormFdx1 = Norm(Fxndx1);
                 double gamma = beta*beta*NormFdx/NormFn1;
-
 
                 if (NormFn1 < NormFn)
                 {

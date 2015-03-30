@@ -10,14 +10,12 @@ namespace KURSOVAYA
 {
     class Program
     {
-
-
         static void Print(double[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write("X["+(i+1)+"] = "+array[i] + " ");
-            } 
+            }
             Console.WriteLine();
         }
 
