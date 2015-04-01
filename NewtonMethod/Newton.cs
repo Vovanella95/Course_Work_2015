@@ -53,7 +53,6 @@ namespace NewtonMethod
                 }
                 Roots[i] = (matrix[i, matrix.GetLength(0)] - summ) / matrix[i, i];
             }
-
             return Roots;
         }
 
@@ -127,19 +126,16 @@ namespace NewtonMethod
                     Xk[i] += dX[i];
                 }
 
-                bool c = true;
+                double[] Fn = new double[N];
                 for (int i = 0; i < N; i++)
                 {
-                    if (F[i](new Vector(Xk)) > eps)
-                    {
-                        c = false;
-                    }
+                    Fn[i] = F[i](new Vector(Xk));
                 }
-
-                if (c)
+                if(Norm(Fn) < eps)
                 {
                     return Xk;
                 }
+
             }
         }
 
@@ -176,12 +172,12 @@ namespace NewtonMethod
                     }
                     J[i, N] = -F[i](new Vector(Xk));
                 }
+
                 double[] dX = Roots(J);
                 
                 for (int i = 0; i < N; i++)
                 {
-                    TempX[i] = Xk[i] + beta*dX[i];// тут цикл для нахождения всяких икс? а бетта постоянная? почему так, странно
-                                                  // тут бета нулевое задано уже, а дальше находится бета первое, оно меняется
+                    TempX[i] = Xk[i] + beta*dX[i];
                 }
 
                 for (int i = 0; i < N; i++)   
@@ -206,15 +202,8 @@ namespace NewtonMethod
                     }
                 }
                 Array.Copy(TempX, Xk, N);
-                bool c = true;
-                for (int i = 0; i < N; i++)
-                {
-                    if (F[i](new Vector(Xk)) > eps)
-                    {
-                        c = false;
-                    }
-                }
-                if (c)
+
+                if (NormFn1 < eps)
                 {
                     return Xk;
                 }
@@ -255,7 +244,6 @@ namespace NewtonMethod
                         X[j] += eps;
                         J[i, j] = (F[i](new Vector(X)) - F[i](new Vector(Xk))) / eps;
                     }
-
                     J[i, N] = -F[i](new Vector(Xk));
                 }
 
@@ -277,7 +265,6 @@ namespace NewtonMethod
                         X[j] += eps;
                         JJ[i, j] = (F[i](new Vector(X)) - F[i](new Vector(TempX))) / eps;
                     }
-
                     JJ[i, N] = -F[i](new Vector(TempX));
                 }
 
@@ -318,15 +305,7 @@ namespace NewtonMethod
                     }
                 }
                 Array.Copy(TempX, Xk, N);
-                bool c = true;
-                for (int i = 0; i < N; i++)
-                {
-                    if (F[i](new Vector(Xk)) > eps)
-                    {
-                        c = false;
-                    }
-                }
-                if (c)
+                if (NormFn1 < eps)
                 {
                     return Xk;
                 }
