@@ -91,7 +91,7 @@ namespace NewtonMethod
         public static double[] SolveNewthon(params Func<Vector, double>[] F) 
         {
             int N = F.Length;
-            double[] Xk = new double[N];
+            double[] Xk = new double[N + 1];
             double eps = 0.000001;
             int Iterations = 0;
 
@@ -133,6 +133,7 @@ namespace NewtonMethod
                 }
                 if(Norm(Fn) < eps)
                 {
+                    Xk[N] = Norm(Fn);
                     return Xk;
                 }
 
@@ -142,7 +143,7 @@ namespace NewtonMethod
         public static double[] IncompleteForecast(params Func<Vector, double>[] F)
         {
             int N = F.Length;
-            double[] Xk = new double[N];
+            double[] Xk = new double[N+1];
             double[] TempX = new double[N];
             double[] Fxn = new double[N];
             double eps = 0.000001;
@@ -205,6 +206,7 @@ namespace NewtonMethod
 
                 if (NormFn1 < eps)
                 {
+                    Xk[N] = NormFn1;
                     return Xk;
                 }
             }
@@ -213,7 +215,7 @@ namespace NewtonMethod
         public static double[] СompleteForecast(params Func<Vector, double>[] F)
         {
             int N = F.Length;
-            double[] Xk = new double[N];
+            double[] Xk = new double[N+1];
             double[] TempX = new double[N];
             double[] TempXn = new double[N];
             double[] Fxn = new double[N];
@@ -307,6 +309,7 @@ namespace NewtonMethod
                 Array.Copy(TempX, Xk, N);
                 if (NormFn1 < eps)
                 {
+                    Xk[N] = NormFn1;
                     return Xk;
                 }
                 
