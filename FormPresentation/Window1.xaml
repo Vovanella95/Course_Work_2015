@@ -1,0 +1,19 @@
+﻿<Window x:Class="FormPresentation.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="300" Width="631">
+    <Grid>
+        <TextBox x:Name="data" HorizontalAlignment="Left" Height="23" Margin="17,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" Text="1 1 1"/>
+        <Label Content="Начальное приближение" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top"/>
+        <Button Content="&gt;" HorizontalAlignment="Left" Margin="126,88,0,0" VerticalAlignment="Top" Width="29" Height="23" Click="Button_Click_1"/>
+        <Button Content="&lt;" HorizontalAlignment="Left" Margin="17,88,0,0" VerticalAlignment="Top" Width="29" Height="23" Click="Button_Click_2"/>
+        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="258,239,0,0" VerticalAlignment="Top" Width="138"/>
+        <Button Content="Решить" HorizontalAlignment="Left" Margin="17,224,0,0" VerticalAlignment="Top" Width="138" Height="35" Click="Button_Click"/>
+        <Slider x:Name="accuracy" HorizontalAlignment="Left" Margin="17,201,0,0" VerticalAlignment="Top" Maximum="0.1" Width="138" IsDirectionReversed="True" Minimum="1E-08" SmallChange="1E-05" Value="1" LargeChange="0.05"/>
+        <Label Content="Точность вычислений" HorizontalAlignment="Left" Margin="17,175,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="answer" HorizontalAlignment="Left" Height="249" Margin="410,10,0,0" VerticalAlignment="Top" Width="203"/>
+        <Label Content="Количество уравнений" HorizontalAlignment="Left" Margin="17,62,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="eqNumber" HorizontalAlignment="Left" Height="23" Margin="46,88,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="80"/>
+
+    </Grid>
+</Window>

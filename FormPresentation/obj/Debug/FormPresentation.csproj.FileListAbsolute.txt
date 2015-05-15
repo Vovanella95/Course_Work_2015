@@ -28,3 +28,5 @@ C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\bin\Debu
 C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\bin\Debug\NewtonMethod.pdb
 C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\obj\Debug\FormPresentation.exe
 C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\obj\Debug\FormPresentation.pdb
+C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\obj\Debug\Window1.baml
+C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\obj\Debug\Window1.g.cs

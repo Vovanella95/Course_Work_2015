@@ -28,9 +28,9 @@ namespace KURSOVAYA
             Func<Vector, double> e2 = a => 2 * a.X[0] - 3 * a.X[1] + a.X[2] * a.X[2] - 4;
             Func<Vector, double> e3 = a => 3 * a.X[0] - a.X[1] * a.X[2] - 3 * a.X[2] - 19;
 
-            var c = Newton.SolveNewthon(e1, e2, e3);
-            var d = Newton.IncompleteForecast(e1, e2, e3);
-            var e = Newton.СompleteForecast(e1, e2, e3);
+            var c = Newton.SolveNewthon(new Func<Vector,double>[]{e1, e2, e3});
+            var d = Newton.IncompleteForecast(new Func<Vector, double>[] { e1, e2, e3 });
+            var e = Newton.СompleteForecast(new Func<Vector, double>[] { e1, e2, e3 });
 
             Print(c);
             Print(d);

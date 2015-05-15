@@ -17,6 +17,7 @@ namespace NewtonMethod
         }
     }
 
+
     public static class Newton
     {
         private static double[] Roots(double[,] matrix)
@@ -88,17 +89,25 @@ namespace NewtonMethod
             }
         }
 
-        public static double[] SolveNewthon(params Func<Vector, double>[] F) 
+        public static double[] SolveNewthon(Func<Vector, double>[] F, double[] first=null, double eps = 0.00001) 
         {
             int N = F.Length;
             double[] Xk = new double[N + 1];
-            double eps = 0.000001;
             int Iterations = 0;
 
-            for (int i = 0; i < N; i++)
+
+            if (first == null)
             {
-                Xk[i] = 1;
+                for (int i = 0; i < N; i++)
+                {
+                    Xk[i] = 1;
+                }
+            }else
+            {
+                Array.Copy(first, Xk, first.Count());
             }
+
+
 
             while (true)
             {
@@ -136,7 +145,10 @@ namespace NewtonMethod
                     Xk[N] = Norm(Fn);
                     return Xk;
                 }
-
+                if(Iterations>1000)
+                {
+                    throw new Exception("Cannot find roots for this system");
+                }
             }
         }
 

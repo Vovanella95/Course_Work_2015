@@ -141,5 +141,11 @@ namespace FormPresentation
             EqNumber.Content = EqNumber.Content.ToString() + "   (Потрачено " + sw.ElapsedTicks + "ts)";
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window1 win = new Window1();
+            win.ShowDialog();
+        }
+
     }
 }
