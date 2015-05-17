@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NewtonMethod;
 using System.IO;
+using System.Diagnostics;
 
 namespace FormPresentation
 {
@@ -30,11 +31,13 @@ namespace FormPresentation
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Stopwatch sw = new Stopwatch();
             double[] start = data.Text.Split(' ').Select(w => Convert.ToDouble(w)).ToArray();
 
             double[] c = null;
             try
             {
+                sw.Start();
                 var eqs = system == 0 ? SystemGenerator.GenerateSystem(Convert.ToInt32(eqNumber.Text)) :
                     SystemGenerator.GenerateSystem2(Convert.ToInt32(eqNumber.Text));
                 if (newton1.IsChecked == true)
@@ -49,6 +52,8 @@ namespace FormPresentation
                 {
                     c = Newton.IncompleteForecast(eqs, start, accuracy.Value);
                 }
+                sw.Stop();
+                time.Content = sw.ElapsedTicks + " ТС";
             }
             catch (Exception ex)
             {

@@ -27,6 +27,9 @@
         <RadioButton x:Name="newton2" Content="Метод Полного Прогноза" HorizontalAlignment="Left" Margin="64,316,0,0" VerticalAlignment="Top" Width="174" Panel.ZIndex="1"/>
         <RadioButton x:Name="newton3" Content="Метод Неполного Прогноза" HorizontalAlignment="Left" Margin="64,332,0,0" VerticalAlignment="Top" Panel.ZIndex="1"/>
         <GroupBox Header="ПАРАМЕТРЫ" HorizontalAlignment="Left" Margin="44,41,0,0" VerticalAlignment="Top" Height="322" Width="216" Background="White" BorderBrush="#FF24915B" FontSize="14"/>
+        <Label Content="         ЗАТРАЧЕННОЕ ВРЕМЯ:" HorizontalAlignment="Left" Margin="463,406,0,0" VerticalAlignment="Top" Background="#FF448B5E" Foreground="White" FontSize="14" Width="300"/>
+        <Label x:Name="time" Content="0 ТС" HorizontalAlignment="Left" Margin="651,406,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="22" Margin="468,410,0,0" VerticalAlignment="Top" Width="21" Source="Images/w128h1281338911586clock.png"/>
 
     </Grid>
 </Window>
