@@ -119,9 +119,6 @@
     <Resource Include="Images\4.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Start.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Process.png" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Start.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
