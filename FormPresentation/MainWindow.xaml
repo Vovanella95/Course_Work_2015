@@ -1,22 +1,16 @@
 ﻿<Window x:Class="FormPresentation.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="537">
-    <Grid HorizontalAlignment="Left" Width="527">
-        <ComboBox x:Name="Systems" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Width="120">
-            <MenuItem Header="Система 1" Click="MenuItem_Click" />
-            <MenuItem Header="Система 2" Click="MenuItem_Click_1"/>
-            <MenuItem Header="Система 3" Click="MenuItem_Click_2"/>
-            <MenuItem Header ="Система 4" Click="MenuItem_Click_3"/>
-        </ComboBox>
-        <Label Content="Выберите систему" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        Title="РЕШЕНИЕ СИСТЕМ НЕЛИНЕЙНЫЖ УРАВНЕНИЙ" Height="480" Width="800" Icon="Images/logo.PNG" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid HorizontalAlignment="Left" Width="792">
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/Start.jpg"/>
+        </Grid.Background>
         <Image x:Name="Images" HorizontalAlignment="Left" Height="62" Margin="153,65,0,0" VerticalAlignment="Top" Width="279"/>
-        <Label x:Name="EqNumber" Content="Количество уравнений:" HorizontalAlignment="Left" Margin="153,30,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Answer" HorizontalAlignment="Left" Height="112" Margin="153,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" AcceptsReturn="True"/>
-        <RadioButton Content="Метод Ньютона" HorizontalAlignment="Left" Margin="40,255,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton Content="Метод Неполного Прогноза" HorizontalAlignment="Left" Margin="40,275,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Метод Полного Прогноза" HorizontalAlignment="Left" Margin="40,295,0,0" VerticalAlignment="Top"/>
-        <Button Content="Тесты" HorizontalAlignment="Left" Margin="344,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="ИСПЫТАТЬ" HorizontalAlignment="Left" Margin="128,392,0,0" VerticalAlignment="Top" Width="122" Click="Button_Click_1" Height="32" RenderTransformOrigin="0.5,0.5" Foreground="White" Background="#FF429768" FontSize="18">
+            
+        </Button>
+        <Button Content="ВЫХОД" HorizontalAlignment="Left" Margin="661,392,0,0" VerticalAlignment="Top" Width="102" Background="#FF449769" Foreground="White" Height="32" Click="Button_Click_2" FontSize="18"/>
 
     </Grid>
 </Window>

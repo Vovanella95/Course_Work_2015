@@ -1,0 +1,4 @@
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\NewtonMethod\bin\Release\NewtonMethod.dll
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\NewtonMethod\bin\Release\NewtonMethod.pdb
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\NewtonMethod\obj\Release\NewtonMethod.dll
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\NewtonMethod\obj\Release\NewtonMethod.pdb

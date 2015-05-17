@@ -1,0 +1,17 @@
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Release\FormPresentation.exe.config
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Release\FormPresentation.exe
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Release\FormPresentation.pdb
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Release\NewtonMethod.dll
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Release\NewtonMethod.pdb
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\FormPresentation.csprojResolveAssemblyReference.cache
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\MainWindow.baml
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\Window1.baml
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\MainWindow.g.cs
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\Window1.g.cs
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\App.g.cs
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\FormPresentation_MarkupCompile.cache
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\FormPresentation.g.resources
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\FormPresentation.Properties.Resources.resources
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\FormPresentation.csproj.GenerateResource.Cache
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\FormPresentation.exe
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Release\FormPresentation.pdb

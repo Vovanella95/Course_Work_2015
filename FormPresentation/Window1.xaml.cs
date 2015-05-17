@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NewtonMethod;
+using System.IO;
 
 namespace FormPresentation
 {
@@ -25,19 +26,40 @@ namespace FormPresentation
             InitializeComponent();
         }
 
+        int system = 0;
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Func<NewtonMethod.Vector, double> e1 = a => a.X[0] * a.X[1] - 8 * a.X[0] - 4 * a.X[2] + 10;
-            Func<NewtonMethod.Vector, double> e2 = a => 2 * a.X[0] - 3 * a.X[1] + a.X[2] * a.X[2] - 4;
-            Func<NewtonMethod.Vector, double> e3 = a => 3 * a.X[0] - a.X[1] * a.X[2] - 3 * a.X[2] - 19;
-
             double[] start = data.Text.Split(' ').Select(w => Convert.ToDouble(w)).ToArray();
 
-            var c = Newton.SolveNewthon(new Func<NewtonMethod.Vector, double>[] { e1, e2, e3 }, start, accuracy.Value);
+            double[] c = null;
+            try
+            {
+                var eqs = system == 0 ? SystemGenerator.GenerateSystem(Convert.ToInt32(eqNumber.Text)) :
+                    SystemGenerator.GenerateSystem2(Convert.ToInt32(eqNumber.Text));
+                if (newton1.IsChecked == true)
+                {
+                    c = Newton.SolveNewthon(eqs, start, accuracy.Value);
+                }
+                if (newton2.IsChecked == true)
+                {
+                    c = Newton.СompleteForecast(eqs, start, accuracy.Value);
+                }
+                if (newton3.IsChecked == true)
+                {
+                    c = Newton.IncompleteForecast(eqs, start, accuracy.Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
 
 
 
 
+            answer.Items.Clear();
             for (int i = 0; i < c.Length-1; i++)
             {
                 answer.Items.Add(
@@ -63,6 +85,20 @@ namespace FormPresentation
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             eqNumber.Text = Convert.ToInt32(eqNumber.Text)>3? Convert.ToString(Convert.ToInt32(eqNumber.Text) - 1):"3";
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (system == 0)
+            {
+                system = 1;
+                img.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Images\Sys2.jpg"));
+            }
+            else
+            {
+                system = 0;
+                img.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Images\Sys1.jpg"));
+            }
         }
 
         

@@ -35,3 +35,11 @@ C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\KURSOVAYA\bin\Debug\KURSO
 C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\KURSOVAYA\bin\Debug\NewtonMethod.dll
 C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\KURSOVAYA\bin\Debug\NewtonMethod.pdb
 C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\KURSOVAYA\obj\Debug\KURSOVAYA.csprojResolveAssemblyReference.cache
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\KURSOVAYA\bin\Debug\KURSOVAYA.exe.config
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\KURSOVAYA\obj\Debug\KURSOVAYA.exe
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\KURSOVAYA\obj\Debug\KURSOVAYA.pdb
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\KURSOVAYA\bin\Debug\KURSOVAYA.exe
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\KURSOVAYA\bin\Debug\KURSOVAYA.pdb
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\KURSOVAYA\bin\Debug\NewtonMethod.dll
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\KURSOVAYA\bin\Debug\NewtonMethod.pdb
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\KURSOVAYA\obj\Debug\KURSOVAYA.csprojResolveAssemblyReference.cache

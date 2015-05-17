@@ -30,3 +30,20 @@ C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\obj\Debu
 C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\obj\Debug\FormPresentation.pdb
 C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\obj\Debug\Window1.baml
 C:\Users\Uladzimir_Paliukhovi\Documents\CourseWork2015\FormPresentation\obj\Debug\Window1.g.cs
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Debug\FormPresentation.exe.config
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Debug\FormPresentation.exe
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Debug\FormPresentation.pdb
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Debug\NewtonMethod.dll
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\bin\Debug\NewtonMethod.pdb
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\FormPresentation.csprojResolveAssemblyReference.cache
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\MainWindow.baml
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\Window1.baml
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\MainWindow.g.cs
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\Window1.g.cs
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\App.g.cs
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\FormPresentation_MarkupCompile.cache
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\FormPresentation.g.resources
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\FormPresentation.Properties.Resources.resources
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\FormPresentation.csproj.GenerateResource.Cache
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\FormPresentation.exe
+C:\Users\Владимир\Desktop\Новая папка\Course_Work_2015-master\FormPresentation\obj\Debug\FormPresentation.pdb
